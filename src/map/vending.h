@@ -17,6 +17,9 @@ struct s_vending {
 	unsigned int value; //at which price
 };
 
+/**
+ * Interface
+ **/
 struct vending_interface {
 	unsigned int next_id;/* next vender id */
 	DBMap *db;

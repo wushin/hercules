@@ -43,9 +43,6 @@ enum channel_operation_status {
 	HCS_STATUS_BANNED,
 };
 
-/**
- * Structures
- **/
 struct Channel_Config {
 	unsigned int *colors;
 	char **colors_name;
@@ -78,6 +75,9 @@ struct channel_data {
 	unsigned char msg_delay;
 };
 
+/**
+ * Channel interface
+ **/
 struct channel_interface {
 	/* vars */
 	DBMap *db;

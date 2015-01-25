@@ -153,7 +153,9 @@ struct npc_path_data {
 	unsigned short references;
 };
 
-/* npc.c interface */
+/**
+ * npc interface
+ **/
 struct npc_interface {
 	/* */
 	struct npc_data *motd;
@@ -314,6 +316,9 @@ struct npc_parse {
 	struct pcrematch_set* inactive;
 };
 
+/**
+ * npc chat interface
+ **/
 struct npc_chat_interface {
 	int (*sub) (struct block_list* bl, va_list ap);
 	void (*finalize) (struct npc_data* nd);
@@ -328,10 +333,12 @@ struct npc_chat_interface {
 
 struct npc_chat_interface *npc_chat;
 
+// pcre interface (libpcre)
+// so that plugins may share and take advantage of the core's pcre
+// should be moved into core/perhaps its own file once hpm is enhanced for login/char
+
 /**
- * pcre interface (libpcre)
- * so that plugins may share and take advantage of the core's pcre
- * should be moved into core/perhaps its own file once hpm is enhanced for login/char
+ * pcre interface
  **/
 struct pcre_interface {
 	pcre *(*compile) (const char *pattern, int options, const char **errptr, int *erroffset, const unsigned char *tableptr);

@@ -12,6 +12,9 @@ struct guild_storage;
 struct item;
 struct map_session_data;
 
+/**
+ * storage interface
+ **/
 struct storage_interface {
 	/* */
 	void (*reconnect) (void);
@@ -31,6 +34,9 @@ struct storage_interface {
 };
 struct storage_interface *storage;
 
+/**
+ * guild storage interface
+ **/
 struct guild_storage_interface {
 	struct DBMap* db; // int guild_id -> struct guild_storage*
 	/* */

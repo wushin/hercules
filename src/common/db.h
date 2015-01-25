@@ -169,7 +169,7 @@ typedef enum DBDataType {
 	DB_DATA_PTR,
 } DBDataType;
 
-/**
+/*
  * Struct for data types used by the database.
  * @param type Type of data
  * @param u Union of available data types

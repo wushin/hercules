@@ -7,9 +7,7 @@
 
 #include "../common/cbasetypes.h"
 
-/**
- * GeoIP information
- **/
+// GeoIP information
 struct s_geoip {
 	unsigned char *cache; // GeoIP.dat information see geoip->init()
 	bool active;

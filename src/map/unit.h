@@ -74,6 +74,9 @@ struct view_data {
 extern const short dirx[8];
 extern const short diry[8];
 
+/**
+ * Interface
+ **/
 struct unit_interface {
 	int (*init) (bool minimal);
 	int (*final) (void);

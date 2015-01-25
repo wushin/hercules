@@ -11,6 +11,9 @@
 
 struct map_session_data;
 
+/**
+ * Interface
+ **/
 struct trade_interface {
 	void (*request) (struct map_session_data *sd, struct map_session_data *target_sd);
 	void (*ack) (struct map_session_data *sd,int type);

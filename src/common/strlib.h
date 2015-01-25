@@ -33,8 +33,8 @@ typedef enum e_svopt {
 /// Other escape sequences supported by the C compiler.
 #define SV_ESCAPE_C_SUPPORTED "abtnvfr\?\"'\\"
 
-/// Parse state.
-/// The field is [start,end[
+// Parse state.
+// The field is [start,end[
 struct s_svstate {
 	const char* str; //< string to parse
 	int len; //< string length
@@ -47,7 +47,7 @@ struct s_svstate {
 };
 
 
-/// StringBuf - dynamic string
+// StringBuf - dynamic string
 struct StringBuf {
 	char *buf_;
 	char *ptr_;
@@ -55,6 +55,9 @@ struct StringBuf {
 };
 typedef struct StringBuf StringBuf;
 
+/**
+ * Interface
+ **/
 struct strlib_interface {
 	char *(*jstrescape) (char* pt);
 	char *(*jstrescapecpy) (char* pt, const char* spt);
@@ -96,6 +99,9 @@ struct strlib_interface {
 
 struct strlib_interface *strlib;
 
+/**
+ * Interface
+ **/
 struct stringbuf_interface {
 	StringBuf* (*Malloc) (void);
 	void (*Init) (StringBuf* self);
@@ -112,6 +118,9 @@ struct stringbuf_interface {
 
 struct stringbuf_interface *StrBuf;
 
+/**
+ * Interface
+ **/
 struct sv_interface {
 	/// Parses a single field in a delim-separated string.
 	/// The delimiter after the field is skipped.

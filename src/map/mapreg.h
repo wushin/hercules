@@ -9,7 +9,7 @@
 #include "../common/cbasetypes.h"
 #include "../common/db.h"
 
-/** Container for a mapreg value */
+// Container for a mapreg value
 struct mapreg_save {
 	int64 uid;         ///< Unique ID
 	union {
@@ -20,6 +20,9 @@ struct mapreg_save {
 	bool save;         ///< Whether a save operation is pending
 };
 
+/**
+ * Interface
+ */
 struct mapreg_interface {
 	struct reg_db regs;
 	/* */

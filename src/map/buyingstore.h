@@ -39,9 +39,6 @@ enum e_buyingstore_failure {
 	BUYINGSTORE_CREATE_NO_INFO       = 8,  // "No sale (purchase) information available."
 };
 
-/**
- * Structures
- **/
 struct s_buyingstore_item {
 	int price;
 	unsigned short amount;

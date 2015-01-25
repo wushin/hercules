@@ -17,18 +17,15 @@
 #define GUILD_PAYEXP_INVERVAL   10000 //Interval (maximum survival time of the cache, in milliseconds)
 #define MAX_GUILD_SKILL_REQUIRE 5
 
-/**
- * Structures
- **/
 struct eventlist {
 	char name[EVENT_NAME_LENGTH];
 	struct eventlist *next;
 };
 
-/**
+/*
  * Guardian data
  * For quick linking to a guardian's info. [Skotlex]
- **/
+ */
 struct guardian_data {
 	int number; //0-MAX_GUARDIANS-1 = Guardians. MAX_GUARDIANS = Emperium.
 
@@ -48,7 +45,9 @@ struct s_guild_skill_tree {
 	} need[MAX_GUILD_SKILL_REQUIRE];
 };
 
-
+/**
+ * Interface
+ **/
 struct guild_interface {
 	void (*init) (bool minimal);
 	void (*final) (void);

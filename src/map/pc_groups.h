@@ -71,6 +71,9 @@ struct pc_groups_new_permission {
 	unsigned int *mask;/* pointer to the plugin val that will store the value of the mask */
 };
 
+/**
+ * Interface
+ **/
 struct pc_groups_interface {
 	/* */
 	DBMap* db; // id -> GroupSettings

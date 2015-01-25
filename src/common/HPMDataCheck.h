@@ -15,7 +15,6 @@ HPExport const struct s_HPMDataCheck HPMDataCheck[] = {
 	#endif // CHAR_CHAR_H
 	#ifdef CHAR_GEOIP_H
 		{ "geoip_interface", sizeof(struct geoip_interface), SERVER_TYPE_CHAR },
-		{ "s_geoip", sizeof(struct s_geoip), SERVER_TYPE_CHAR },
 	#else
 		#define CHAR_GEOIP_H
 	#endif // CHAR_GEOIP_H
@@ -95,17 +94,11 @@ HPExport const struct s_HPMDataCheck HPMDataCheck[] = {
 		#define COMMON_CONF_H
 	#endif // COMMON_CONF_H
 	#ifdef COMMON_DB_H
-		{ "DBData", sizeof(struct DBData), SERVER_TYPE_ALL },
 		{ "DBIterator", sizeof(struct DBIterator), SERVER_TYPE_ALL },
 		{ "DBMap", sizeof(struct DBMap), SERVER_TYPE_ALL },
 	#else
 		#define COMMON_DB_H
 	#endif // COMMON_DB_H
-	#ifdef COMMON_DES_H
-		{ "BIT64", sizeof(struct BIT64), SERVER_TYPE_ALL },
-	#else
-		#define COMMON_DES_H
-	#endif // COMMON_DES_H
 	#ifdef COMMON_ERS_H
 		{ "eri", sizeof(struct eri), SERVER_TYPE_ALL },
 	#else
@@ -116,19 +109,15 @@ HPExport const struct s_HPMDataCheck HPMDataCheck[] = {
 	#else
 		#define COMMON_MAPINDEX_H
 	#endif // COMMON_MAPINDEX_H
-	#ifdef COMMON_MMO_H
-		{ "quest", sizeof(struct quest), SERVER_TYPE_ALL },
-	#else
-		#define COMMON_MMO_H
-	#endif // COMMON_MMO_H
 	#ifdef COMMON_SOCKET_H
 		{ "socket_interface", sizeof(struct socket_interface), SERVER_TYPE_ALL },
 	#else
 		#define COMMON_SOCKET_H
 	#endif // COMMON_SOCKET_H
 	#ifdef COMMON_STRLIB_H
-		{ "StringBuf", sizeof(struct StringBuf), SERVER_TYPE_ALL },
-		{ "s_svstate", sizeof(struct s_svstate), SERVER_TYPE_ALL },
+		{ "stringbuf_interface", sizeof(struct stringbuf_interface), SERVER_TYPE_ALL },
+		{ "strlib_interface", sizeof(struct strlib_interface), SERVER_TYPE_ALL },
+		{ "sv_interface", sizeof(struct sv_interface), SERVER_TYPE_ALL },
 	#else
 		#define COMMON_STRLIB_H
 	#endif // COMMON_STRLIB_H
@@ -143,30 +132,37 @@ HPExport const struct s_HPMDataCheck HPMDataCheck[] = {
 		#define LOGIN_LOGIN_H
 	#endif // LOGIN_LOGIN_H
 	#ifdef MAP_ATCOMMAND_H
-		{ "AliasInfo", sizeof(struct AliasInfo), SERVER_TYPE_MAP },
 		{ "atcommand_interface", sizeof(struct atcommand_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_ATCOMMAND_H
 	#endif // MAP_ATCOMMAND_H
+	#ifdef MAP_BATTLEGROUND_H
+		{ "battleground_interface", sizeof(struct battleground_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_BATTLEGROUND_H
+	#endif // MAP_BATTLEGROUND_H
 	#ifdef MAP_BATTLE_H
-		{ "Damage", sizeof(struct Damage), SERVER_TYPE_MAP },
 		{ "battle_interface", sizeof(struct battle_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_BATTLE_H
 	#endif // MAP_BATTLE_H
 	#ifdef MAP_BUYINGSTORE_H
 		{ "buyingstore_interface", sizeof(struct buyingstore_interface), SERVER_TYPE_MAP },
-		{ "s_buyingstore_item", sizeof(struct s_buyingstore_item), SERVER_TYPE_MAP },
 	#else
 		#define MAP_BUYINGSTORE_H
 	#endif // MAP_BUYINGSTORE_H
 	#ifdef MAP_CHANNEL_H
-		{ "Channel_Config", sizeof(struct Channel_Config), SERVER_TYPE_MAP },
+		{ "channel_interface", sizeof(struct channel_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_CHANNEL_H
 	#endif // MAP_CHANNEL_H
+	#ifdef MAP_CHAT_H
+		{ "chat_interface", sizeof(struct chat_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_CHAT_H
+	#endif // MAP_CHAT_H
 	#ifdef MAP_CHRIF_H
-		{ "auth_node", sizeof(struct auth_node), SERVER_TYPE_MAP },
+		{ "chrif_interface", sizeof(struct chrif_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_CHRIF_H
 	#endif // MAP_CHRIF_H
@@ -175,41 +171,109 @@ HPExport const struct s_HPMDataCheck HPMDataCheck[] = {
 	#else
 		#define MAP_CLIF_H
 	#endif // MAP_CLIF_H
+	#ifdef MAP_DUEL_H
+		{ "duel_interface", sizeof(struct duel_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_DUEL_H
+	#endif // MAP_DUEL_H
 	#ifdef MAP_ELEMENTAL_H
 		{ "elemental_skill", sizeof(struct elemental_skill), SERVER_TYPE_MAP },
 	#else
 		#define MAP_ELEMENTAL_H
 	#endif // MAP_ELEMENTAL_H
 	#ifdef MAP_GUILD_H
-		{ "eventlist", sizeof(struct eventlist), SERVER_TYPE_MAP },
-		{ "guardian_data", sizeof(struct guardian_data), SERVER_TYPE_MAP },
+		{ "guild_interface", sizeof(struct guild_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_GUILD_H
 	#endif // MAP_GUILD_H
+	#ifdef MAP_HOMUNCULUS_H
+		{ "homunculus_interface", sizeof(struct homunculus_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_HOMUNCULUS_H
+	#endif // MAP_HOMUNCULUS_H
+	#ifdef MAP_INSTANCE_H
+		{ "instance_interface", sizeof(struct instance_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_INSTANCE_H
+	#endif // MAP_INSTANCE_H
+	#ifdef MAP_IRC_BOT_H
+		{ "irc_bot_interface", sizeof(struct irc_bot_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_IRC_BOT_H
+	#endif // MAP_IRC_BOT_H
+	#ifdef MAP_ITEMDB_H
+		{ "itemdb_interface", sizeof(struct itemdb_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_ITEMDB_H
+	#endif // MAP_ITEMDB_H
+	#ifdef MAP_LOG_H
+		{ "log_interface", sizeof(struct log_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_LOG_H
+	#endif // MAP_LOG_H
+	#ifdef MAP_MAIL_H
+		{ "mail_interface", sizeof(struct mail_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_MAIL_H
+	#endif // MAP_MAIL_H
 	#ifdef MAP_MAPREG_H
-		{ "mapreg_save", sizeof(struct mapreg_save), SERVER_TYPE_MAP },
+		{ "mapreg_interface", sizeof(struct mapreg_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_MAPREG_H
 	#endif // MAP_MAPREG_H
 	#ifdef MAP_MAP_H
-		{ "map_data_other_server", sizeof(struct map_data_other_server), SERVER_TYPE_MAP },
+		{ "map_interface", sizeof(struct map_interface), SERVER_TYPE_MAP },
+		{ "mapit_interface", sizeof(struct mapit_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_MAP_H
 	#endif // MAP_MAP_H
-	#ifdef MAP_PACKETS_STRUCT_H
-		{ "EQUIPSLOTINFO", sizeof(struct EQUIPSLOTINFO), SERVER_TYPE_MAP },
+	#ifdef MAP_MERCENARY_H
+		{ "mercenary_interface", sizeof(struct mercenary_interface), SERVER_TYPE_MAP },
 	#else
-		#define MAP_PACKETS_STRUCT_H
-	#endif // MAP_PACKETS_STRUCT_H
+		#define MAP_MERCENARY_H
+	#endif // MAP_MERCENARY_H
+	#ifdef MAP_MOB_H
+		{ "mob_interface", sizeof(struct mob_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_MOB_H
+	#endif // MAP_MOB_H
+	#ifdef MAP_NPC_H
+		{ "npc_interface", sizeof(struct npc_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_NPC_H
+	#endif // MAP_NPC_H
+	#ifdef MAP_PARTY_H
+		{ "party_interface", sizeof(struct party_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_PARTY_H
+	#endif // MAP_PARTY_H
+	#ifdef MAP_PATH_H
+		{ "path_interface", sizeof(struct path_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_PATH_H
+	#endif // MAP_PATH_H
+	#ifdef MAP_PC_GROUPS_H
+		{ "pc_groups_interface", sizeof(struct pc_groups_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_PC_GROUPS_H
+	#endif // MAP_PC_GROUPS_H
 	#ifdef MAP_PC_H
-		{ "autotrade_vending", sizeof(struct autotrade_vending), SERVER_TYPE_MAP },
 		{ "item_cd", sizeof(struct item_cd), SERVER_TYPE_MAP },
+		{ "pc_interface", sizeof(struct pc_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_PC_H
 	#endif // MAP_PC_H
+	#ifdef MAP_PET_H
+		{ "pet_interface", sizeof(struct pet_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_PET_H
+	#endif // MAP_PET_H
+	#ifdef MAP_QUEST_H
+		{ "quest_interface", sizeof(struct quest_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_QUEST_H
+	#endif // MAP_QUEST_H
 	#ifdef MAP_SCRIPT_H
-		{ "Script_Config", sizeof(struct Script_Config), SERVER_TYPE_MAP },
-		{ "reg_db", sizeof(struct reg_db), SERVER_TYPE_MAP },
 		{ "script_interface", sizeof(struct script_interface), SERVER_TYPE_MAP },
 	#else
 		#define MAP_SCRIPT_H
@@ -220,13 +284,36 @@ HPExport const struct s_HPMDataCheck HPMDataCheck[] = {
 		#define MAP_SEARCHSTORE_H
 	#endif // MAP_SEARCHSTORE_H
 	#ifdef MAP_SKILL_H
-		{ "skill_cd", sizeof(struct skill_cd), SERVER_TYPE_MAP },
-		{ "skill_condition", sizeof(struct skill_condition), SERVER_TYPE_MAP },
 		{ "skill_interface", sizeof(struct skill_interface), SERVER_TYPE_MAP },
-		{ "skill_unit_save", sizeof(struct skill_unit_save), SERVER_TYPE_MAP },
 	#else
 		#define MAP_SKILL_H
 	#endif // MAP_SKILL_H
+	#ifdef MAP_STATUS_H
+		{ "status_interface", sizeof(struct status_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_STATUS_H
+	#endif // MAP_STATUS_H
+	#ifdef MAP_STORAGE_H
+		{ "guild_storage_interface", sizeof(struct guild_storage_interface), SERVER_TYPE_MAP },
+		{ "storage_interface", sizeof(struct storage_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_STORAGE_H
+	#endif // MAP_STORAGE_H
+	#ifdef MAP_TRADE_H
+		{ "trade_interface", sizeof(struct trade_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_TRADE_H
+	#endif // MAP_TRADE_H
+	#ifdef MAP_UNIT_H
+		{ "unit_interface", sizeof(struct unit_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_UNIT_H
+	#endif // MAP_UNIT_H
+	#ifdef MAP_VENDING_H
+		{ "vending_interface", sizeof(struct vending_interface), SERVER_TYPE_MAP },
+	#else
+		#define MAP_VENDING_H
+	#endif // MAP_VENDING_H
 };
 HPExport unsigned int HPMDataCheckLen = ARRAYLENGTH(HPMDataCheck);
 HPExport int HPMDataCheckVer = 1;

@@ -1644,10 +1644,6 @@ enum {
 	UNT_MAX = 0x190
 };
 
-/**
- * Structures
- **/
-
 struct skill_condition {
 	int weapon,ammo,ammo_qty,hp,sp,zeny,spiritball,mhp,state;
 	int itemid[MAX_SKILL_ITEM_REQUIRE],amount[MAX_SKILL_ITEM_REQUIRE];
@@ -1775,20 +1771,20 @@ struct skill_cd_entry {
 	uint16 skill_id;//skill id
 };
 
-/**
+/*
  * Skill Cool Down Delay Saving
  * Struct skill_cd is not a member of struct map_session_data
  * to keep cooldowns in memory between player log-ins.
  * All cooldowns are reset when server is restarted.
- **/
+ */
 struct skill_cd {
 	struct skill_cd_entry *entry[MAX_SKILL_TREE];
 	unsigned char cursor;
 };
 
-/**
+/*
  * Skill Unit Persistency during endack routes (mostly for songs see bugreport:4574)
- **/
+ */
 struct skill_unit_save {
 	uint16 skill_id, skill_lv;
 };

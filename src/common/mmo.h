@@ -217,7 +217,7 @@ enum quest_state {
 	Q_COMPLETE, ///< Completed quest
 };
 
-/// Questlog entry
+// Questlog entry
 struct quest {
 	int quest_id;                    ///< Quest ID
 	unsigned int time;               ///< Expiration time

@@ -269,6 +269,9 @@ struct item_drop_list {
 #define mob_is_gvg(md) (map->list[(md)->bl.m].flag.gvg_castle && ( (md)->class_ == MOBID_EMPERIUM || (md)->class_ == MOBID_BARRICADE1 || (md)->class_ == MOBID_GUARIDAN_STONE1 || (md)->class_ == MOBID_GUARIDAN_STONE2) )
 #define mob_is_treasure(md) (((md)->class_ >= MOBID_TREAS01 && (md)->class_ <= MOBID_TREAS40) || ((md)->class_ >= MOBID_TREAS41 && (md)->class_ <= MOBID_TREAS49))
 
+/**
+ * Interface
+ **/
 struct mob_interface {
 	//Dynamic mob database, allows saving of memory when there's big gaps in the mob_db [Skotlex]
 	struct mob_db *db_data[MAX_MOB_DB+1];

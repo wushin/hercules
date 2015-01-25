@@ -37,9 +37,6 @@ typedef bool (*AtCommandFunc)(const int fd, struct map_session_data* sd, const c
 typedef struct AtCommandInfo AtCommandInfo;
 typedef struct AliasInfo AliasInfo;
 
-/**
- * Structures
- **/
 struct AliasInfo {
 	AtCommandInfo *command;
 	char alias[ATCOMMAND_LENGTH];

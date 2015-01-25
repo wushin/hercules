@@ -320,10 +320,6 @@ enum {
 	MF_NOCASHSHOP
 };
 
-/**
- * Structures
- **/
-
 struct Script_Config {
 	unsigned warn_func_mismatch_argtypes : 1;
 	unsigned warn_func_mismatch_paramnum : 1;
@@ -346,7 +342,7 @@ struct Script_Config {
 	const char* onuntouch_name;
 };
 
-/**
+/*
  * Generic reg database abstraction to be used with various types of regs/script variables.
  */
 struct reg_db {

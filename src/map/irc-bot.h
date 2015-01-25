@@ -21,6 +21,9 @@ struct irc_func {
 	void (*func)(int, char*, char*, char*, char*);
 };
 
+/**
+ * Interface
+ **/
 struct irc_bot_interface {
 	int fd;
 	bool isIn, isOn;

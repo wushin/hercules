@@ -535,6 +535,9 @@ struct item_package {
 #define itemdb_canmail(item, gmlv)                (itemdb->isrestricted((item), (gmlv), 0, itemdb->canmail_sub))
 #define itemdb_canauction(item, gmlv)             (itemdb->isrestricted((item), (gmlv), 0, itemdb->canauction_sub))
 
+/**
+ * Interface
+ **/
 struct itemdb_interface {
 	void (*init) (bool minimal);
 	void (*final) (void);

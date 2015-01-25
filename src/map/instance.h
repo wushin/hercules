@@ -57,6 +57,9 @@ struct instance_data {
 	unsigned int hdatac;
 };
 
+/**
+ * Interface
+ **/
 struct instance_interface {
 	void (*init) (bool minimal);
 	void (*final) (void);

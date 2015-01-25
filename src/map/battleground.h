@@ -71,6 +71,9 @@ struct bg_arena {
 	enum bg_queue_types allowed_types;
 };
 
+/**
+ * Interface
+ **/
 struct battleground_interface {
 	bool queue_on;
 	/* */

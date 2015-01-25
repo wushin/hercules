@@ -76,10 +76,6 @@ enum e_battle_check_target { //New definitions [Skotlex]
 	BCT_ALL         =   0x3f0000, ///< Sum of BCT_NOONE to BCT_SAMEGUILD
 };
 
-/**
- * Structures
- **/
-
 // damage structure
 struct Damage {
 	int64 damage,damage2; //right, left dmg

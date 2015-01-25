@@ -221,7 +221,7 @@ enum packet_headers {
 #pragma pack(push, 1)
 #endif // not NetBSD < 6 / Solaris
 
-/**
+/*
  * structs for data
  */
 struct EQUIPSLOTINFO {

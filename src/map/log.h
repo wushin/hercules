@@ -84,6 +84,9 @@ typedef enum e_log_filter {
 	LOG_FILTER_CHANCE   = 0x800,  // Log rare items and Emperium ( drop chance <= rare_log )
 } e_log_filter;
 
+/**
+ * Interface
+ **/
 struct log_interface {
 	struct {
 		e_log_pick_type enable_logs;
